@@ -1,0 +1,94 @@
+@import "variable";
+@import "media-query";
+
+html {
+  font-size: 100px;
+  @include mq("tab") {
+    font-size: 85px;
+  }
+  @include mq("sm") {
+    font-size: 70px;
+  }
+}
+
+body {
+  font-size: 0.16rem;
+  line-height: 1.5;
+  font-family: "Sawarabi Mincho", serif;
+  color: $color-font;
+  overflow-wrap: break-word;
+}
+h1,
+h2 {
+  font-size: 0.48rem;
+}
+h3,
+h4 {
+  font-size: 0.32rem;
+}
+h5,
+h6 {
+  font-size: 0.24rem;
+}
+
+.sm-br {
+  display: none;
+  @include mq("sm") {
+    display: inline;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.section {
+  padding: 100px 0 120px 0;
+  @include mq("tab") {
+    padding: 75x 0 95px 0;
+  }
+  @include mq("sm") {
+    padding: 50px 0 70px 0;
+  }
+}
+
+.inner {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  background: $color-main;
+  color: #fff;
+  text-align: center;
+  display: block;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0 3px 6px rgba(#000, 0.6);
+  cursor: pointer;
+  &:hover {
+    background: lighten($color-main, 7%);
+  }
+  &:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0 2px 4px rgba(#000, 0.9);
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 0.3rem;
+  position: relative;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 3rem;
+    border-bottom: 4px solid red;
+    position: absolute;
+    bottom: -0.05rem;
+    left: 50%;
+    transform: translateX(-52%);
+  }
+}
